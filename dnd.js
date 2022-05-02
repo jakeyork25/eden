@@ -121,7 +121,7 @@ const GetScoreArray = (clss, race) => {
         case "Sorcerer": scoreArray = SetScoreArray(randArray, largest, 5, nextLargest, 2); break;
         case "Warlock": scoreArray = SetScoreArray(randArray, largest, 5, nextLargest, 2); break;
         case "Wizard": scoreArray = SetScoreArray(randArray, largest, 2, nextLargest, 5); break;
-        default: console.log("Unexpected class type." + clss);
+        default: console.log("Unexpected class type " + clss);
             break;
     }
 
@@ -137,7 +137,7 @@ const GetScoreArray = (clss, race) => {
         case "Half-orc": scoreArray = UpdateScoreArray(scoreArray, [2, 0, 1, 0, 0, 0]); break;
         case "Human": scoreArray = UpdateScoreArray(scoreArray, [1, 1, 1, 1, 1, 1]); break;
         case "Tiefling": scoreArray = UpdateScoreArray(scoreArray, [0, 0, 0, 1, 0, 2]); break;
-        default: console.log("Unexpected race type." + clss);
+        default: console.log("Unexpected race type " + clss);
             break;
     }
     return scoreArray
@@ -454,9 +454,11 @@ const ArrayRemove = (arr, value) => {
     });
 }
 
-function PrintInventory() {
-    let clss = ChooseRandomText('classes');
+function PrintInventory(loadedImage, font, clss, background) {
     let invArray = PullTextLineAsArray('classEquipment', clss);
+    let bgInvArray = PullTextLineAsArray('backgroundEquipment', background);
+    invArray = MergeArrays(invArray, bgInvArray);
+    console.log(invArray);
     for(var i = 0; i < invArray.length; i++) {
         var invenOptions = invArray[i];
         if(invenOptions.includes("/")) {
@@ -465,24 +467,37 @@ function PrintInventory() {
             invArray[i] = option;
         }
     }
-    console.log(invArray);
-    for(var i = 0; i < invArray.length; i++) {
+    let gold;
+    let removeArray = [];
+    let invArrayLength = invArray.length;
+    for(var i = 0; i < invArrayLength; i++) {
         var invenText = invArray[i];
-        console.log(invArray[i])
         if(invenText.includes("$")) {
             var amount = invenText[1];
-            invArray = RemoveValueFromArray(invenText, invArray);
+            removeArray.push(invenText);
             var equipmentType = invenText.substring(2);
             for(var j = 0; j < amount; j++) {
                 var equipment = ChooseRandomTextWithTitles('equipment', equipmentType);
                 while(invArray.includes(equipment)) {
                     equipment = ChooseRandomTextWithTitles('equipment', equipmentType);
                 }
-                invArray.push(equipment);
+                //console.log(equipment)
+                if(equipment.includes('\r')) equipment = equipment.replace('\r', '');  
+                
+                if(equipment.includes('gp')) {
+                    gold = equipment.substring(0, 2);
+                    console.log("GPGPGPGPGPGP");
+                }
+                else invArray.push(equipment);
             }
         }
+    }    
+    for(var i = 0; i < removeArray.length; i++) {
+        invArray = RemoveValueFromArray(removeArray[i], invArray);
     }
-    console.log(invArray);
+    for(var i = 0; i < invArray.length; i++) {
+        loadedImage.print(font, 350, 764.5 + (i * 14.2), invArray[i]);
+    }
 }
 
 function PrintScores(loadedImage, font, scoreArray) {
@@ -504,7 +519,7 @@ const Write12Font = (race, clss, background, saves, skills, abilityModArray) => 
             PrintSavings(loadedImage, font, 263, saves, abilityModArray);
             PrintSkills(loadedImage, font, skills, abilityModArray);
             PrintProficiencies(loadedImage, font, clss, race, background);
-            //PrintInventory(loadedImage, font, clss);
+            PrintInventory(loadedImage, font, clss, background);
             loadedImage.write('images/final.png');
         })
         .catch(function (err) {
@@ -534,4 +549,4 @@ async function Main() {
     Write12Font(race, clss, background, saves, skills, abilityModArray);
 }
 
-PrintInventory('Barbarian');
+Main();

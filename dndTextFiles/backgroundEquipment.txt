@@ -1,0 +1,26 @@
+-Acolyte-
+a holy symbol, a prayer book/a prayer wheel, 5 sticks of incense, vestments, a set of common clothes, a pouch
+-Charlatan-
+a set of fine clothes, a disguise kit, ten stoppered bottles filled with colored liquid/a set of weighted dice/a deck of marked cards/a signet ring of an imaginary duke, a pouch, 15gp
+-Criminal-
+a crowbar, a pouch, a set of dark common clothes, a hood, 15 gp
+-Entertainer-
+$1musical, love letter/lock of hair/a trinket, a costume, a pouch, 15gp
+-Folk hero-
+a shovel, an iron pot, a set of common clothes, a pouch, 10gp, $1artisanTools
+-Guild artisan-
+$1artisanTools, a letter of introduction from your guild, a set of travelers clothes, a pouch, 15gp
+-Hermit-
+a winter blanket, a set of common clothes, an herbalism kit, a scroll case stuffed of notes, 5gp
+-Noble-
+a set of fine clothes, a signet ring, a scroll of pedigree, a purse, 25gp
+-Outlander-
+a staff, a hunting trap, a trophy from an animal, a set of travelers clothes, a pouch, 10gp
+-Sage-
+a bottle of black ink, a quill, a small knife, a letter from a dead colleague, a set of common clothes, a pouch, 10gp
+-Sailor-
+a belaying pin, 50 feet of silk rope, a rabbit foot, a set of common clothes, a pouch, 10gp
+-Soldier-
+an insignia of rank, a dagger/a broken blade/a piece of a banner, a set of bone dice/a deck of cards, a set of common clothes, a pouch, 10gp
+-Urchin-
+a small knife, a map of the city you grew up in, a pet mouse, a token to remember your parents by, a set of common clothes, a pouch, 10gp

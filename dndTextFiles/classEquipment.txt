@@ -9,7 +9,7 @@ a wooden shield/$1simpleWeapon, a scimitar/$1simpleMeleeWeapon, leather armor, a
 -Fighter-
 chain mail/leather armor and longbow with 20 arrows, $1martialWeapon and a shield/$2martialWeapon, a light crossbow and 20 bolts/two handaxes, a dungeoneer's pack/an explorer's pack
 -Monk-
-a shortswor/$1simpleWeapon, a dungeoneer's pack/an explorer's pack, 10 darts
+a shortsword/$1simpleWeapon, a dungeoneer's pack/an explorer's pack, 10 darts
 -Paladin-
 $1martialWeapon and a shield/$2martialWeapon, five javelins/$1simpleMeleeWeapon, a priest's pack/an explorer's pack, chain mail, a holy symbol
 -Ranger-
