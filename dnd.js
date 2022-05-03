@@ -454,7 +454,7 @@ const ArrayRemove = (arr, value) => {
     });
 }
 
-function PrintInventory(loadedImage, font, clss, background) {
+function GetInventoryArray(clss, background) {
     let invArray = PullTextLineAsArray('classEquipment', clss);
     let bgInvArray = PullTextLineAsArray('backgroundEquipment', background);
     invArray = MergeArrays(invArray, bgInvArray);
@@ -467,6 +467,11 @@ function PrintInventory(loadedImage, font, clss, background) {
             invArray[i] = option;
         }
     }
+    return invArray;
+}
+
+
+function PrintInventory(loadedImage, font, invArray) {
     let gold;
     let removeArray = [];
     let invArrayLength = invArray.length;
@@ -508,7 +513,7 @@ function PrintScores(loadedImage, font, scoreArray) {
     }
 }
 
-const Write12Font = (race, clss, background, saves, skills, abilityModArray) => {
+const Write12Font = (race, clss, background, saves, skills, abilityModArray, invArray) => {
     var loadedImage;
     Jimp.read('images/16font.png')
         .then(function (image) {
@@ -519,12 +524,26 @@ const Write12Font = (race, clss, background, saves, skills, abilityModArray) => 
             PrintSavings(loadedImage, font, 263, saves, abilityModArray);
             PrintSkills(loadedImage, font, skills, abilityModArray);
             PrintProficiencies(loadedImage, font, clss, race, background);
-            PrintInventory(loadedImage, font, clss, background);
+            PrintInventory(loadedImage, font, invArray);
             loadedImage.write('images/final.png');
         })
         .catch(function (err) {
             console.error(err);
         });
+}
+
+function GetArmorClass(invArray, dex) {
+    let acStat = 10 + dex;
+    if(invArray.includes('leather armor')) acStat = 11 + dex;
+    else if(invArray.includes('scale mail')) acStat = 14 + Math.min(dex, 2);
+    else if(invArray.includes('chain mail')) acStat = 16;
+
+    if(invArray.includes('shield')) acStat += 2;
+    return acStat;
+}
+
+function PrintCombatStats(invArray, dex) {
+
 }
 
 function sleep(ms) {
@@ -542,11 +561,24 @@ async function Main() {
     let abilityModArray = GetAbilityModArray(scoreArray); 
     let saves = GetSavingProf(clss);
     let skills = GetSkills(clss, background);
+    let invArray = GetInventoryArray(clss, background);
     Write32Font(abilityModArray);
     await sleep(200);
     Write16Font(race, clss, alignment, background, skills, abilityModArray, scoreArray);
     await sleep(200);
-    Write12Font(race, clss, background, saves, skills, abilityModArray);
+    Write12Font(race, clss, background, saves, skills, abilityModArray, invArray);
 }
 
-Main();
+function Test() {
+    let race = ChooseRandomText('races');
+    let clss = ChooseRandomText('classes');
+    let background = ChooseRandomText('background');
+    let scoreArray = GetScoreArray(clss, race);
+    let abilityModArray = GetAbilityModArray(scoreArray); 
+    let invArray = GetInventoryArray(clss, background);
+    let acStat = GetArmorClass(invArray, abilityModArray[1]);
+    console.log(acStat)
+}
+
+Test();
+
