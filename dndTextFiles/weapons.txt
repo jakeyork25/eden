@@ -1,0 +1,37 @@
+Club - melee, 1d4, bludgeoning
+Dagger - finesse, 1d4, piercing
+Greatclub - melee, 1d8, bludgeoning
+Handaxe - melee, 1d6, slashing
+Javelin - melee, 1d6, piercing
+Light Hammer - melee, 1d4, bludgeoning
+Mace - melee, 1d6, bludgeoning
+Quarterstaff - melee, 1d6, bludgeoning
+Sickle - melee, 1d4, slashing
+Spear - melee, 1d6, piercing
+Crossbow Light - ranged, 1d8, piercing
+Dart - finesse, 1d4, piercing
+Shortbow - ranged, 1d6, piercing
+Sling - ranged, 1d4, bludgeoning
+Battleaxe - melee, 1d8, slashing
+Flail - melee, 1d8, slashing
+Glaive - melee, 1d10, slashing
+Greataxe - melee, 1d12, slashing
+Greatsword - melee, 2d6, slashing
+Halberd - melee, 1d10, slashing
+Lance - melee, 1d12, piercing
+Longsword - melee, 1d8, slashing
+Maul - melee, 2d6, bludgeoning
+Morningstar - melee, 1d8, piercing
+Pike - melee, 1d10, piercing
+Rapier - finesse, 1d8, piercing
+Scimitar - finesse, 1d6, slashing
+Shortsword - finesse, 1d6, piercing
+Trident - melee, 1d6, piercing
+War Pick - melee, 1d8, piercing
+Warhammer - melee, 1d8, bludgeoning
+Whip - finesse, 1d4, slashing
+Blowgun - ranged, 1, piercing
+Crossbow Hand - ranged, 1d6, piercing
+Crossbow Heavy - ranged, 1d10, piercing
+Longbow - ranged, 1d8, piercing
+Net - ranged, 0, none

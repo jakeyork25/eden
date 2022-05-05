@@ -5,9 +5,8 @@ function randomInt (min, max) { // min and max included
 }
 
 function GetTextFileIndex (fileName, text) {
-    var options = fs.readFileSync(`dndTextFiles/${fileName}.txt`).toString();
-    let optionArray = options.split(", ");
-    return optionArray.indexOf(text);
+    var options = fs.readFileSync(`dndTextFiles/${fileName}.txt`).toString().split('\r\n')[0].split(', ');
+    return options.indexOf(text);
 }
 
 function GetSkillIndexes (arr, amount) {
@@ -36,7 +35,6 @@ export function GetSkills (clss, background) {
     let bgIndex = GetTextFileIndex('backgroundInfo', background);
     let bgSkills;
     let skillIndexes = [];
-    console.log("bg index = " + bgIndex)
     switch (bgIndex) {
         case 0: bgSkills = [6, 14]; break;
         case 1: bgSkills = [4, 15]; break;

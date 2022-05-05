@@ -72,9 +72,23 @@ function PrintPassivePerception(loadedImage, font, perception) {
     loadedImage.print(font, 49, 766, passivePer.toString());
 }
 
-export function PrintStatBlock (loadedImage, saves, skills, modifiedArray) {
+function PrintScores(loadedImage, font, scoreArray) {
+    for(var i = 0; i < scoreArray.length; i++) {
+        var x = 64;
+        if(scoreArray[i] < 10) x = 69;
+        loadedImage.print(font, x, 242 + (i * 92), scoreArray[i].toString());
+    }
+}
+
+function PrintProficiencyBonus (loadedImage, font) {
+    loadedImage.print(font, 130, 170, "+2");
+}
+
+export function PrintStatBlock (loadedImage, fontSmall, fontMedium, fontLarge, saves, skills, modifiedArray, scoreArray) {
     PrintModifiers(loadedImage, fontLarge, modifiedArray);
+    PrintScores(loadedImage, fontMedium, scoreArray);
     PrintSavings(loadedImage, fontSmall, saves, modifiedArray);
     PrintSkills(loadedImage, fontSmall, skills, modifiedArray);
+    PrintProficiencyBonus(loadedImage, fontMedium);
     PrintPassivePerception(loadedImage, fontMedium, skills[11]);
 }

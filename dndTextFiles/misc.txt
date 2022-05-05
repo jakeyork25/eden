@@ -1,1 +1,15 @@
 Lawful Good, Neutral Good, Chaotic Good, Lawful Neutral, Neutral, Chaotic Neutral, Lawful Evil, Neutral Evil, Chaotic Evil
+-Languages-
+Abyssal, Celestial, Common, Deep Speech, Draconic, Dwarvish, Elvish, Giant, Gnomish, Goblin, Halfling, Infernal, Orc, Primordial, Sylvan, Undercommon
+-Musical-
+Bagpipes, Drum, Dulcimer, Flute, Lute, Lyre, Horn, Pan Flute, Shawm, Viol, Hurdy-Gurdy, Sackbut, Whistle-Stick, Harp, Tambourine, Erhu, Hulusi, Udu, Maracas, Gong
+-Artisan-
+Alchemist's Supplies, Brewer's Supplies, Calligrapher's Supplies, Carpenter's Tools, Cartographer's Tools, Cobbler's Tools, Cook's Utensils, Glassblower's Tools, Jeweler's Tools, Leatherworker's Tools, Mason's Tools, Painter's Tools, Potter's Tools, Smith's Tools, Tinker's Tools, Weaver's Tools, Woodcarver's Tools
+-Skills-
+Acrobatics, Animal Handling, Arcana, Athletics, Deception, History, Insight, Intimidation, Investigation, Medicine, Nature, Perception, Performance, Persuasion, Religion, Sleight of Hand, Stealth, Survival
+-Martial Weapons-
+battleaxe, flail, glaive, greataxe, greatsword, halberd, lance, longsword, maul, morningstar, pike, rapier, scimitar, shortsword, trident, war pick, warhammer, whip, blowgun, hand crossbow, heavy crossbow, longbow, net
+-Simple Melee Weapons-
+club, dagger, greatclub, handaxe, javelin, light hammer, mace, quarterstaff, sickle, spear
+-Simple Weapons-
+club, dagger, greatclub, handaxe, javelin, light hammer, mace, quarterstaff, sickle, spear, light crossbow, dart, shortbow, sling

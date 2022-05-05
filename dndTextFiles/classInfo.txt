@@ -1,1 +1,40 @@
 Barbarian, Bard, Cleric, Druid, Fighter, Monk, Paladin, Ranger, Rogue, Sorcerer, Warlock, Wizard
+-Proficiencies-
+Barbarian - Light Armor, Medium Armor, Shields, Simple Weapons, Martial Weapons
+Bard - Light Armor, Simple Weapons, Hand Crossbows, Longswords, Rapiers, Shortswords, x3Musical
+Cleric - Light Armor, Medium Armor, Shields, Simple Weapons
+Druid - Light Armor, Medium Armor, Clubs, Daggers, Darts, Javelins, Maces, Quarterstaffs, Scimitars, Sickles, Slings, Spears, Herbalism Kit
+Fighter - All Armor, Shields, Simple Weapons, Martial Weapons
+Monk - Simple Weapons, Shortswords, x1Artisan/x1Musical
+Paladin - All Armor, Shields, Simple Weapons, Martial Weapons
+Ranger - Light Armor, Medium Armor, Shields, Simple Weapons, Martial Weapons
+Rogue - Light Armor, Simple Weapons, Hand Crossbows, Longswords, Rapiers, Shortswords, Thieves' Tools
+Sorcerer - Daggers, Darts, Slings, Quarterstaffs, Light Crossbows
+Warlock - Light Armor, Simple Weapons
+Wizard - Daggers, Darts, Slings, Quarterstaffs, Light Crossbows
+-Equipment-
+Barbarian - a greataxe/$1Martial Weapons, two handaxes/$1Simple Weapons, an explorers pack, four javelins
+Bard - a rapier/a longsword/$1Simple Weapons, a diplomat's pack/an entertainer's pack, a lute/$1Musical, leather armor, a dagger
+Cleric - a mace, scale mail/leather armor, a light crossbow and 20 bolts/$1Simple Weapons, a priest's pack/an explorer's pack, a shield, a holy symbol
+Druid - a wooden shield/$1Simple Weapons, a scimitar/$1Simple Melee Weapons, leather armor, an explorer's pack, a druidic focus
+Fighter - chain mail/leather armor and longbow with 20 arrows, $1Martial Weapons and a shield/$2Martial Weapons, a light crossbow and 20 bolts/two handaxes, a dungeoneer's pack/an explorer's pack
+Monk - a shortsword/$1Simple Weapons, a dungeoneer's pack/an explorer's pack, 10 darts
+Paladin - $1Martial Weapons and a shield/$2Martial Weapons, five javelins/$1Simple Melee Weapons, a priest's pack/an explorer's pack, chain mail, a holy symbol
+Ranger - scale mail/leather armor, two shortswords/$2Simple Melee Weapons, a dungeoneer's pack/an explorer's pack, a longbow, a quiver of 20 arrows
+Rogue - a rapier/a shortsword, a shortbow and quiver of 20 arrows/a shortsword, a burglar's pack/a dungeoneer's pack/an explorer's pack, leather armor, two daggers, thieve's tools
+Sorcerer - a light crossbow and 20 bolts/$1Simple Weapons, a component pouch/an arcane focus, a dungeoneer's pack/an explorer's pack, two daggers
+Warlock - a light crossbow and 20 bolts/$1Simple Weapons, a component pouch/an arcane focus, a scholar's pack/a dungeoneer's pack, leather armor, $1Simple Weapons, two daggers
+Wizard - a quarterstaff/a dagger, a component pouch/an arcane focus, a scholar's pack/an explorer's pack, a spellbook
+-Hitdie-
+Barbarian - d12
+Bard - d8
+Cleric - d8
+Druid - d8
+Fighter - d10
+Monk - d8
+Paladin - d10
+Ranger - d10
+Rogue - d8
+Sorcerer - d6
+Warlock - d8
+Wizard - d6

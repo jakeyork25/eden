@@ -1,1 +1,21 @@
 Dragonborn, Dwarf, Elf, Gnome, Half-elf, Halfling, Half-orc, Human, Tiefling
+-Languages-
+Dragonborn - Common, Draconic
+Dwarf - Common, Dwarvish
+Elf - Common, Elvish
+Gnome - Common, Gnomish, Undercommon
+Half-elf - Common, Elvish, Extra
+Halfling - Common, Halfling
+Half-orc - Common, Orc
+Human - Common, Extra
+Tiefling - Common, Infernal
+-Speeds-
+Dragonborn - 30 ft
+Dwarf - 25 ft
+Elf - 30 ft
+Gnome - 25 ft
+Half-elf - 30 ft
+Halfling - 25 ft
+Half-orc - 30 ft
+Human - 30 ft
+Tiefling - 30 ft

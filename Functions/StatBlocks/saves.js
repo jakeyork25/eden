@@ -1,5 +1,8 @@
+import fs from 'fs';
+
 export function GetSaves (clss) {
-    let index = GetTextFileIndex('classes', clss);
+    let classes = fs.readFileSync(`dndTextFiles/classInfo.txt`).toString().split('\r\n')[0].split(', ');
+    let index = classes.indexOf(clss);
     let profArr = [];
     switch (index) {
         case 0: profArr = [1, 0, 1, 0, 0, 0]; break;
