@@ -7,6 +7,7 @@ import { GetScores, GetModifiers, GetSaves, GetSkills, PrintStatBlock } from './
 import { GetLanguages, GetProficiencies, PrintProficiencies } from './Functions/Proficiencies/index.js'; 
 import { GetEquipment, PrintEquipment } from './Functions/Equipment/index.js';
 import { GetArmorClass, GetSpeed, GetHitDice, GetHitPointMax, PrintCombatStats } from './Functions/CombatStats/index.js';
+import { GetWeapons, GetWeaponInfo, CheckProficiency, GetAttackModifier, PrintAttackStats } from './Functions/Attacks/index.js';
 
 const GenerateName = async () => {
     puppeteerExtra.use(stealthPluggin());
@@ -59,6 +60,12 @@ async function Main() {
     let hitDice = GetHitDice(clss);
     let hitPointMax = GetHitPointMax(hitDice, modifiers[2]);
     PrintCombatStats(loadedImage, fontSmall, fontMedium, armorClass, modifiers[1], speed, hitDice, hitPointMax);
+
+    let weapons = GetWeapons(equipment);
+    let weaponInfoList = GetWeaponInfo(weapons);
+    let profBools = CheckProficiency(weapons, proficiencies);
+    let attackModifiers = GetAttackModifier(weaponInfoList, modifiers[0], modifiers[1], profBools);
+    console.log(attackModifiers);
     
     loadedImage.write('images/final.png');
 }

@@ -1,4 +1,5 @@
 import fs from 'fs';
+import { PrintAttackStats } from './prints.js'; 
 
 function GetWeaponList () {
     let weaponList = [];
@@ -9,9 +10,8 @@ function GetWeaponList () {
     return weaponList;
 }
 
-function GetWeapons () {
+function GetWeapons (equipment) {
     let equippedWeapons = [];
-    let equipment = ['a pouch', 'two shortswords', 'common clothes', 'a longbow'];
     let weaponList = GetWeaponList();
     for(var i = 0; i < weaponList.length; i++) {
         var weapon = weaponList[i];
@@ -22,47 +22,52 @@ function GetWeapons () {
     return equippedWeapons;
 }
 
-function GetWeaponInfo (weapon) {
+function GetWeaponInfo (weapons) {
+    let infoList = [];
     var textArray = fs.readFileSync(`dndTextFiles/weapons.txt`).toString().split('\r\n');
-    for(var i = 0; i < textArray.length; i++) {
-        if(textArray[i].includes(weapon)) return textArray[i].split(' - ')[1].split(', ');
-    }
-}
-
-function CheckProficiency (weapon) {
-    let profArray = ['Simple Weapons', 'Common'];
-    var textArray = fs.readFileSync(`dndTextFiles/misc.txt`).toString().split('\r\n');
-    for(var i = 0; i < profArray.length; i++) {
-        var typeIndex = textArray.indexOf('-' + profArray[i] + '-');
-        if(typeIndex > -1) {
-            var profWeapons = textArray[typeIndex + 1].split(', ');
-            if(profWeapons.includes(weapon)) return true;
+    for(var i = 0; i < weapons.length; i++) {
+        for(var j = 0; j < textArray.length; j++) {
+            if(textArray[j].includes(weapons[i])) infoList.push(textArray[j].split(' - ')[1].split(', '));
         }
     }
-    return false;
-}
-
-function GetAttackModifier (weaponType, strength, dex, proficiency) {
-    let modifier = 0;
-    if(weaponType == 'melee') modifier = strength;
-    else if(weaponType == 'ranged') modifier = dex;
-    else if(weaponType == 'finesse') {
-        if(strength > dex) modifier = strength
-        else modifier = dex;
+    return infoList;
     }
-    if(proficiency) modifier += 2;
-    return modifier;
-}
 
-function PrintAttackStats (loadedImage, font, weapons) {
+function CheckProficiency (weapons, profArray) {
+    let profBools = [];
+    var textArray = fs.readFileSync(`dndTextFiles/misc.txt`).toString().split('\r\n');
     for(var i = 0; i < weapons.length; i++) {
-        loadedImage.print(font, 100, 100 + (i * 30), weapons[i]);
+        for(var j = 0; j < profArray.length; j++) {
+            if(profArray[j].includes(weapons[i])) profBools.push(true);
+            var typeIndex = textArray.indexOf('-' + profArray[j] + '-');
+            if(typeIndex > -1) {
+                var profWeapons = textArray[typeIndex + 1].split(', ');
+                if(profWeapons.includes(weapons[i].toLowerCase())) profBools.push(true);
+            }
+        }
+        if(profBools.length < i + 1) profBools.push(false);
     }
+    return profBools;
 }
 
-//find damage based on dice in weapon table
+function GetAttackModifier (weaponInfo, strength, dex, profBools) {
+    let weaponTypes = [];
+    for(var i = 0; i < weaponInfo.length; i++) {
+        weaponTypes.push(weaponInfo[i][0]);
+    }
+    let modifiers = [];
+    for(var i = 0; i < weaponTypes.length; i++) {
+        var modifier = 0;
+        if(weaponTypes[i] == 'melee') modifier = strength;
+        else if(weaponTypes[i] == 'ranged') modifier = dex;
+        else if(weaponTypes[i] == 'finesse') {
+            if(strength > dex) modifier = strength
+            else modifier = dex;
+        }
+        if(profBools[i]) modifier += 2;
+        modifiers.push(modifier);
+    }
+    return modifiers;
+}
 
-let weapons = GetWeapons();
-let weaponType = GetWeaponType(weapons[1]);
-let modifier = GetAttackModifier(weaponType, 2, -2, true);
-console.log(CheckProficiency('dagger'))
+export { GetWeapons, GetWeaponInfo, CheckProficiency, GetAttackModifier, PrintAttackStats }
